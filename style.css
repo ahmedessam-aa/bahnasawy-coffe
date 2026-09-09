@@ -4729,3 +4729,73 @@ footer {
         font-size: 9px;
     }
 }
+
+/* Prevent fixed-width scroll artwork from creating mobile overflow. */
+@media (max-width: 800px) {
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden !important;
+    }
+
+    .coffee-scroll-section {
+        height: 135vh !important;
+        overflow: hidden !important;
+    }
+
+    .coffee-scroll-sticky {
+        min-height: 0 !important;
+        height: 100svh !important;
+        padding: 28px 18px !important;
+    }
+
+    .coffee-scroll-content {
+        position: relative !important;
+        inset: auto !important;
+        transform: none !important;
+        width: min(100%, 320px) !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+
+    .coffee-scroll-title {
+        font-size: clamp(34px, 11vw, 50px) !important;
+    }
+
+    .coffee-scroll-description {
+        margin: 16px auto 0 !important;
+        font-size: 12px !important;
+        line-height: 1.8 !important;
+    }
+
+    .coffee-scroll-visual {
+        position: absolute !important;
+        width: min(92vw, 360px) !important;
+        height: min(76vw, 300px) !important;
+        left: 50% !important;
+        bottom: 8% !important;
+        transform: translateX(-50%) scale(.7) !important;
+        transform-origin: center bottom !important;
+    }
+
+    .coffee-scroll-glow {
+        width: 90vw !important;
+        height: 90vw !important;
+    }
+
+    .coffee-scroll-progress {
+        display: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .coffee-scroll-section {
+        height: 115vh !important;
+    }
+
+    .coffee-scroll-visual {
+        transform: translateX(-50%) scale(.55) !important;
+        bottom: 5% !important;
+    }
+}

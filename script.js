@@ -152,6 +152,25 @@ function easeInOut(t) {
 
 function updateHero() {
 
+    /* Keep the mobile hero stable; the desktop reveal is too aggressive on small screens. */
+    if (window.innerWidth <= 800) {
+
+        heroLeft.style.transform = "translate3d(0,0,0)";
+        heroRight.style.transform = "translate3d(0,0,0)";
+        heroCenter.style.transform = "translate(-50%,-50%)";
+        heroCenter.style.opacity = "1";
+        heroLine.style.transform = "translateX(-50%)";
+        heroLine.style.opacity = "1";
+        heroVideoContainer.style.width = "0";
+        heroVideoContainer.style.height = "0";
+        videoContent.style.opacity = "0";
+        document.querySelectorAll(".hero-side-text").forEach(element => {
+            element.style.opacity = "1";
+        });
+        return;
+
+    }
+
     const rect =
         hero.getBoundingClientRect();
 
