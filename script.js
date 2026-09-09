@@ -326,11 +326,11 @@ function updateHero() {
 
 
     heroVideoContainer.style.width =
-        `${videoWidth}vw`;
+        `${videoWidth * document.documentElement.clientWidth / 100}px`;
 
 
     heroVideoContainer.style.height =
-        `${videoHeight}vh`;
+        `${videoHeight * window.innerHeight / 100}px`;
 
 
     /* =====================================================
